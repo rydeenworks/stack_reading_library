@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  author: 
+  isbn: MyString
+  date: 2019-05-05 02:16:19
+
+two:
+  title: MyString
+  author: 
+  isbn: MyString
+  date: 2019-05-05 02:16:19

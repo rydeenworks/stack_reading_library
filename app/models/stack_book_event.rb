@@ -1,0 +1,2 @@
+class StackBookEvent < ApplicationRecord
+end

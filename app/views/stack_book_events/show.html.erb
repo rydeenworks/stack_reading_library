@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @stack_book_event.title %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @stack_book_event.author %>
+</p>
+
+<p>
+  <strong>Isbn:</strong>
+  <%= @stack_book_event.isbn %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @stack_book_event.date %>
+</p>
+
+<%= link_to 'Edit', edit_stack_book_event_path(@stack_book_event) %> |
+<%= link_to 'Back', stack_book_events_path %>
