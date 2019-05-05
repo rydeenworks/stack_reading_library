@@ -1,0 +1,23 @@
+= form_with(model: stack_book_event, local: true) do |form|
+  - if stack_book_event.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(stack_book_event.errors.count, "error")
+        prohibited this stack_book_event from being saved:
+      %ul
+        - stack_book_event.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = form.label :title
+    = form.text_field :title
+  .field
+    = form.label :author
+    = form.text_field :author
+  .field
+    = form.label :isbn
+    = form.text_field :isbn
+  .field
+    = form.label :date
+    = form.datetime_select :date
+  .actions
+    = form.submit

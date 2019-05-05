@@ -1,0 +1,16 @@
+%p#notice= notice
+%p
+  %strong Title:
+  = @stack_book_event.title
+%p
+  %strong Author:
+  = @stack_book_event.author
+%p
+  %strong Isbn:
+  = @stack_book_event.isbn
+%p
+  %strong Date:
+  = @stack_book_event.date
+= link_to 'Edit', edit_stack_book_event_path(@stack_book_event)
+|
+= link_to 'Back', stack_book_events_path
