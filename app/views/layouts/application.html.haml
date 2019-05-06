@@ -2,11 +2,25 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title StackReadingLibrary
+    %title ツンドク図書館
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %header
+    %nav.navbar.navbar-inverse
+      .container-fluid
+        .navbar-header
+          %a.navbar-brand{:href => "#"} ツンドク図書館
+        %ul.nav.navbar-nav.navbar-right
+          %li
+            %a{:href => "#"}
+              %span.glyphicon.glyphicon-user
+              Sign Up
+          %li
+            %a{:href => "#"}
+              %span.glyphicon.glyphicon-log-in
+              Login
   %body
     .container
       = yield

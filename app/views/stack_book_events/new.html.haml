@@ -1,3 +1,41 @@
 %h1 New Stack Book Event
 = render 'new_form', stack_book_event: @stack_book_event
+%div
+  ISBN13：
+  %input#isbn{:autofocus => "", :name => "isbn", :type => "text", :value => ""}/
+  %button#getBookInfo.btn.btn-default 書籍情報取得
+%div
+  %p#thumbnail
+%div
+  書籍名：
+  %input#title{:name => "title", :type => "text", :value => ""}/
+%div
+  著者名：
+  %input#author{:name => "author", :type => "text", :value => ""}/
+%div
+  サムネイルURI：
+  %input#cover{:name => "cover", :type => "text", :value => ""}/
 = link_to 'Back', stack_book_events_path
+:javascript
+  $(function() {
+      $('#getBookInfo').click( function( e ) {
+          e.preventDefault();
+          const isbn = $("#isbn").val();
+          const url = "https://api.openbd.jp/v1/get?isbn=" + isbn;
+
+          $.getJSON( url, function( data ) {
+              if( data[0] == null ) {
+                  alert("データが見つかりません");
+              } else {
+                  if( data[0].summary.cover == "" ){
+                      $("#thumbnail").html('<img src=\"\" />');
+                  } else {
+                      $("#thumbnail").html('<img src=\"' + data[0].summary.cover + '\" style=\"border:solid 1px #000000\" />');
+                  }
+                  $("#title").val(data[0].summary.title);
+                  $("#author").val(data[0].summary.author);
+                  $("#cover").val(data[0].summary.cover);
+              }
+          });
+      });
+  });

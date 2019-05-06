@@ -1,22 +1,22 @@
 %p#notice= notice
-%h1 Stack Book Events
-%table
+%h1 積んだ本リスト
+%table.table
   %thead
     %tr
+      %th Date
       %th Title
       %th Author
       %th Isbn
-      %th Date
       %th{:colspan => "3"}
   %tbody
     - @stack_book_events.each do |stack_book_event|
       %tr
+        %td= stack_book_event.date
         %td= stack_book_event.title
         %td= stack_book_event.author
         %td= stack_book_event.isbn
-        %td= stack_book_event.date
         %td= link_to 'Show', stack_book_event
         %td= link_to 'Edit', edit_stack_book_event_path(stack_book_event)
         %td= link_to 'Destroy', stack_book_event, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
-= link_to 'New Stack Book Event', new_stack_book_event_path
+= link_to '本を積む', new_stack_book_event_path
