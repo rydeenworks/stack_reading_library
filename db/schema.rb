@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_06_123952) do
+ActiveRecord::Schema.define(version: 2019_05_06_102257) do
 
-# Could not dump table "stack_book_events" because of following StandardError
-#   Unknown type '' for column 'title'
+  create_table "stack_book_events", force: :cascade do |t|
+    t.string "title"
+    t.string "author"
+    t.string "isbn"
+    t.datetime "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", null: false

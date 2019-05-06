@@ -27,15 +27,6 @@
   %button#getBookInfo.btn.btn-default 書籍情報取得
 %div
   %p#thumbnail
-%div
-  書籍名：
-  %input#title{:name => "title", :type => "text", :value => ""}/
-%div
-  著者名：
-  %input#author{:name => "author", :type => "text", :value => ""}/
-%div
-  サムネイルURI：
-  %input#cover{:name => "cover", :type => "text", :value => ""}/
 = link_to 'Back', stack_book_events_path
 :javascript
   $(function() {
