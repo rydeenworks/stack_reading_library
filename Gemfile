@@ -41,6 +41,8 @@ gem 'haml-rails'
 # for honoka
 gem 'jquery-rails'
 gem 'honoka-rails'
+# for authentication
+gem 'sorcery'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
