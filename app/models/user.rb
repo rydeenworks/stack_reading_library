@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :stack_book_events, dependent: :destroy
   authenticates_with_sorcery!
   
   validates :password, length: { minimum: 8 }, if: -> { new_record? || changes[:crypted_password] }

@@ -11,7 +11,7 @@
     %nav.navbar.navbar-inverse
       .container-fluid
         .navbar-header
-          %a.navbar-brand{:href => "#"} ツンドク図書館
+          = link_to "ツンドク図書館", root_path, :class=>'navbar-brand'
         - if current_user
           %ul.nav.navbar-nav.navbar-right
             %li

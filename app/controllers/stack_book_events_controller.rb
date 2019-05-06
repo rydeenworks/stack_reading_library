@@ -25,6 +25,7 @@ class StackBookEventsController < ApplicationController
   # POST /stack_book_events.json
   def create
     @stack_book_event = StackBookEvent.new(stack_book_event_params)
+    @stack_book_event.user_id = current_user.id
 
     respond_to do |format|
       if @stack_book_event.save
