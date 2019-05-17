@@ -1,10 +1,11 @@
 %h1 積んだ本リスト
-
-- @stack_book_events.each do |stack_book_event|
-  .row
-    .col-md-6= stack_book_event.title
-    .col-md-2.col-xs-4= stack_book_event.author
-    .col-md-2.col-xs-4= stack_book_event.date.to_date()
-    .col-md-2.col-xs-4= link_to '本の詳細', stack_book_event, class:"btn btn-primary"
+.book-container
+  - @stack_book_events.each do |stack_book_event|
+    = link_to( stack_book_event) do
+      %div.book
+        %img{ src: stack_book_event.image }
+        .title.h5= stack_book_event.title
+        .author.h5= stack_book_event.author
+        .date.h5= stack_book_event.date.to_date()
 %br/
-= link_to '本を積む', new_stack_book_event_path, class:"btn btn-primary"
+= link_to '本を積む', new_stack_book_event_path, class:"btn-lg btn-primary btn-abs"
