@@ -1,3 +1,61 @@
 // Place all the styles related to the StackBookEvents controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@mixin truncate {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+$book-height: 50px;
+
+.book-container {
+    a:link {color:#000000; text-decoration:none }
+    a:visited { color:#000000; text-decoration:none }
+    a:hover { color:#000000; text-decoration:none }
+    a:active { color:#000000; text-decoration:none }
+    .book {
+        height: $book-height;
+        opacity: 0.8;
+        border: 1px solid gray;
+        &:hover {
+            opacity: 1.0;
+            border: 1px solid #000000;
+        }
+        &:active {
+            opacity: 1.0;
+        }
+        img {
+            background-color: gray;
+            width: 40px;
+            height: $book-height;
+            float: left;
+        }
+        .title {
+            @include truncate;
+            width: 60%;
+            float: left;
+            padding-left: 10px;
+        }
+        .author {
+            width: 20%;
+            float: left;
+            @include truncate;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .date {
+            width: 10%;
+            float: leftt;
+            @include truncate;
+            padding-right: 10px;
+        }
+    }
+}
+
+.btn-abs {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+}

@@ -70,6 +70,6 @@ class StackBookEventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def stack_book_event_params
-      params.require(:stack_book_event).permit(:title, :author, :isbn, :date)
+      params.require(:stack_book_event).permit(:title, :author, :isbn, :date, :image)
     end
 end

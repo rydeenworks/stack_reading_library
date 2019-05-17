@@ -9,6 +9,8 @@
     = f.input :author, readonly: true
   .form-group
     = f.input :date, readonly: true
+  .form-group
+    = f.input :image, readonly: true
   .form-actions
     = f.submit
 %div
@@ -34,6 +36,7 @@
                   }
                   $("#stack_book_event_title").val(data[0].summary.title);
                   $("#stack_book_event_author").val(data[0].summary.author);
+                  $("#stack_book_event_image").val(data[0].summary.cover);
               }
           });
       });
