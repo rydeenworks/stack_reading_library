@@ -16,3 +16,9 @@
 @import "stack_book_events";
 @import "bootstrap-sprockets";
 @import "honoka";
+
+// for responsive
+.container {
+    max-width: 1024px;
+    min-width: 320px;
+}
