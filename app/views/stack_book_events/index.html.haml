@@ -2,10 +2,13 @@
 .book-container
   - @stack_book_events.each do |stack_book_event|
     = link_to( stack_book_event) do
-      %div.book
-        %img{ src: stack_book_event.image }
-        .title.h5= stack_book_event.title
-        .author.h5= stack_book_event.author
-        .date.h5= stack_book_event.date.to_date()
-%br/
+      .book
+        .book-img
+          %img{ src: stack_book_event.image }
+        .book-detail
+          .book-title
+            .title.h5= stack_book_event.title
+          .book-author-date
+            .author.h6= stack_book_event.author
+            .date.h6= stack_book_event.date.to_date()
 = link_to '本を積む', new_stack_book_event_path, class:"btn-lg btn-primary btn-abs"
