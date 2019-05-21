@@ -11,6 +11,7 @@
 
 // 画面サイズ共通/スマートフォン縦
 
+// for index.html
 .book-container {
     width: 100%;
     a:link {color:#000000; text-decoration:none }
@@ -70,3 +71,22 @@
     bottom: 20px;
 }
 
+// for show.html
+.detail-container {
+    width: 100%;
+    .book-title {
+        width: 100%;
+    }
+    .book-detail {
+        width: 100%;
+        display: flex;
+        .book-image {
+            height: 200px;
+            padding-right: 10px;
+            img {
+                background-color: gray;
+                height: 100%;
+            }
+        }
+    }
+}

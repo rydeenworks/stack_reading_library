@@ -1,15 +1,35 @@
-%p
-  %strong Title:
-  = @stack_book_event.title
-%p
-  %strong Author:
-  = @stack_book_event.author
-%p
-  %strong Isbn:
-  = @stack_book_event.isbn
-%p
-  %strong Date:
-  = @stack_book_event.date
-= link_to 'Edit', edit_stack_book_event_path(@stack_book_event)
-|
-= link_to 'Back', stack_book_events_path
+.detail-container
+  .book-title.h4
+    = @stack_book_event.title
+  .book-detail
+    .book-image
+      %img{ src: @stack_book_event.image }
+    %table
+      %tr
+        %td
+          .h5
+            著者：
+        %td
+          .h5
+            = @stack_book_event.author
+      %tr
+        %td
+          .h5
+            ISBN：
+        %td
+          .h5
+            = @stack_book_event.isbn
+      %tr
+        %td
+          .h5
+            積んだ日：
+        %td
+          .h5
+            = @stack_book_event.date.to_date()
+  %br
+  = link_to '[amazon]', "https://www.amazon.co.jp/gp/search?ie=UTF8&tag=dynamitecruis-22&linkCode=ur2&linkId=4b1da2ab20d2fa32b9230f88ddab039e&camp=247&creative=1211&index=books&keywords=" + @stack_book_event.title
+  %img{:alt => "", :border => "0", :height => "1", :src => "//ir-jp.amazon-adsystem.com/e/ir?t=dynamitecruis-22&l=ur2&o=9", :style => "border:none !important; margin:0px !important;", :width => "1"}/
+  %br
+  = link_to 'Edit', edit_stack_book_event_path(@stack_book_event)
+  |
+  = link_to 'Back', stack_book_events_path
