@@ -1,4 +1,6 @@
-%h1 New Stack Book Event
+%h1 本の登録
+%div
+  %button#getBookInfo.btn.btn-default ISBNから書籍情報取得
 
 = simple_form_for(@stack_book_event) do |f|
   .form-group
@@ -7,17 +9,15 @@
     = f.input :title
   .form-group
     = f.input :author
+  -# .form-group
+    = f.input :date
   .form-group
-    = f.input :date, readonly: true
-  .form-group
-    = f.input :image, readonly: true
+    = f.hidden_field :image
   .form-actions
     = f.submit
-%div
-  %button#getBookInfo.btn.btn-default 書籍情報取得
+= link_to 'Back', stack_book_events_path
 %div
   %p#thumbnail
-= link_to 'Back', stack_book_events_path
 :javascript
   $(function() {
       $('#getBookInfo').click( function( e ) {
