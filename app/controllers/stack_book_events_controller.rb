@@ -26,6 +26,7 @@ class StackBookEventsController < ApplicationController
   def create
     @stack_book_event = StackBookEvent.new(stack_book_event_params)
     @stack_book_event.user_id = current_user.id
+    @stack_book_event.date = Time.zone.now
 
     respond_to do |format|
       if @stack_book_event.save
