@@ -1,0 +1,19 @@
+%h1 Listing read_book_events
+
+%table
+  %thead
+    %tr
+      %th
+      %th
+      %th
+
+  %tbody
+    - @read_book_events.each do |read_book_event|
+      %tr
+        %td= link_to 'Show', read_book_event
+        %td= link_to 'Edit', edit_read_book_event_path(read_book_event)
+        %td= link_to 'Destroy', read_book_event, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Read book event', new_read_book_event_path

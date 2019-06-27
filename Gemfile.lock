@@ -93,6 +93,10 @@ GEM
       haml (>= 4.0.6, < 6.0)
       html2haml (>= 1.0.1)
       railties (>= 5.1)
+    hirb (0.7.3)
+    hirb-unicode (0.0.5)
+      hirb (~> 0.5)
+      unicode-display_width (~> 0.1.1)
     honoka-rails (3.3.7)
     html2haml (2.2.0)
       erubis (~> 2.7.0)
@@ -224,6 +228,7 @@ GEM
       thread_safe (~> 0.1)
     uglifier (4.1.20)
       execjs (>= 0.3.0, < 3)
+    unicode-display_width (0.1.1)
     web-console (3.7.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -245,6 +250,8 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   haml-rails
+  hirb
+  hirb-unicode
   honoka-rails
   jbuilder (~> 2.5)
   jquery-rails
