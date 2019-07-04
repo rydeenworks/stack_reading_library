@@ -26,13 +26,13 @@
         %td
           .h5
             = @stack_book_event.date.to_date()
-      %tr
-        %td
-          .h5
-            = link_to '読んだ', new_stack_book_event_read_book_event_path(@stack_book_event), class:"btn-lg btn-primary"
   %br
-  = link_to '[amazon]', "https://www.amazon.co.jp/gp/search?ie=UTF8&tag=dynamitecruis-22&linkCode=ur2&linkId=4b1da2ab20d2fa32b9230f88ddab039e&camp=247&creative=1211&index=books&keywords=" + @stack_book_event.title
+  = link_to 'amazon', "https://www.amazon.co.jp/gp/search?ie=UTF8&tag=dynamitecruis-22&linkCode=ur2&linkId=4b1da2ab20d2fa32b9230f88ddab039e&camp=247&creative=1211&index=books&keywords=" + @stack_book_event.title, class:"btn-lg btn-warning"
   %img{:alt => "", :border => "0", :height => "1", :src => "//ir-jp.amazon-adsystem.com/e/ir?t=dynamitecruis-22&l=ur2&o=9", :style => "border:none !important; margin:0px !important;", :width => "1"}/
+  %br
+  %br
+  %br
+  = link_to '読んだ', new_stack_book_event_read_book_event_path(@stack_book_event), class:"btn-lg btn-primary"
   %br
   %br
   %h5
