@@ -32,6 +32,10 @@
   %br
   %br
   %br
+  = link_to '図書館蔵書状況', "https://calil.jp/book/"+@stack_book_event.isbn, class:"btn-lg btn-primary"
+  %br
+  %br
+  %br
   = link_to '本を読了', new_stack_book_event_read_book_event_path(@stack_book_event), class:"btn-lg btn-primary"
   %br
   %br
@@ -46,6 +50,3 @@
   = link_to '本を削除', stack_book_event_path(@stack_book_event), method: :delete, class:"btn-lg btn-danger"
   %br
   %br
-  = link_to 'Edit', edit_stack_book_event_path(@stack_book_event)
-  |
-  = link_to 'Back', stack_book_events_path
