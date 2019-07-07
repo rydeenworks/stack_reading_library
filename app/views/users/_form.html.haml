@@ -8,12 +8,21 @@
 
   .field
     = f.label :email
+    %br
     = f.text_field :email
+    %br
   .field
     = f.label :password
+    %br
     = f.password_field :password
+    %br
   .field
     = f.label :password_confirmation
+    %br
     = f.password_field :password_confirmation
+    %br
+    %br
   .actions
-    = f.submit 'Save'
+    = f.submit '登録する', class: "btn-lg btn-primary"
+    %br
+    %br

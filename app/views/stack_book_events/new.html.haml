@@ -1,23 +1,26 @@
-%h1 本の登録
-%div
-  %button#getBookInfo.btn.btn-default ISBNから書籍情報取得
-
-= simple_form_for(@stack_book_event) do |f|
-  .form-group
-    = f.input :isbn
-  .form-group
-    = f.input :title
-  .form-group
-    = f.input :author
-  -# .form-group
-    = f.input :date
-  .form-group
-    = f.hidden_field :image
-  .form-actions
-    = f.submit
-= link_to 'Back', stack_book_events_path
-%div
-  %p#thumbnail
+.center-container
+  %h1 本の登録
+  = simple_form_for(@stack_book_event) do |f|
+    .form-group
+      = f.input :isbn, label: "ISBN(10 or 13)", placeholder: "ISBNを入力してください"
+    %button#getBookInfo.btn-lg.btn-primary ISBNでタイトル・著者を取得する
+    %br
+    %br
+    %div
+      %p#thumbnail
+    %br
+    .form-group
+      = f.input :title, label: "本のタイトル", placeholder: "情報取得できない場合は直接入力"
+    .form-group
+      = f.input :author, label: "本の著者", placeholder: "情報取得できない場合は直接入力"
+    -# .form-group
+      = f.input :date
+    .form-group
+      = f.hidden_field :image
+    .form-actions
+      = f.submit "本を積む", class: "btn-lg btn-primary"
+  %br
+  = link_to 'Back', stack_book_events_path
 :javascript
   $(function() {
       $('#getBookInfo').click( function( e ) {
