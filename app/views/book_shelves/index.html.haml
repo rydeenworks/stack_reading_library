@@ -1,0 +1,8 @@
+%h1 本棚リスト
+.bookshelf-container
+  - @book_shelves.each do |bookshelf|
+    .bookshelf
+      .title.h2= link_to bookshelf.title, bookshelf
+      .note.h4= bookshelf.note
+      .info= link_to '本棚を編集', edit_book_shelf_path(bookshelf), class:"btn btn-warning"
+= link_to '本棚を作る', new_book_shelf_path, class:"btn-lg btn-primary btn-abs"

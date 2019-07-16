@@ -1,0 +1,10 @@
+-# frozen_string_literal: true
+= simple_form_for(@book_shelf) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+  .form-inputs
+    = f.input :title, label: "本棚の名前", placeholder: "必須、20文字以内"
+    = f.input :note, label: "本棚の説明", placeholder: "任意、100文字以内"
+  .form-actions
+    = f.button :submit, "本棚を作成" , class:"btn-lg btn-primary"
+  %br

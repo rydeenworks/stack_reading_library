@@ -1,0 +1,57 @@
+// Place all the styles related to the BookShelves controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@mixin truncate {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+// for index.html
+.bookshelf-container {
+    width: 100%;
+    a:link {color:#000000; text-decoration:none }
+    a:visited { color:#000000; text-decoration:none }
+    a:hover { color:#000000; text-decoration:none }
+    a:active { color:#000000; text-decoration:none }
+    .bookshelf {
+        display: flex;
+        opacity: 0.8;
+        border: 1px solid gray;
+        height: 80px;
+        &:hover {
+            opacity: 1.0;
+            border: 1px solid #000000;
+        }
+        &:active {
+            opacity: 1.0;
+        }
+        .title {
+            @include truncate;
+            width: 20%;
+        }
+        .note {
+            @include truncate;
+            width: 40%;
+        }
+        .info {
+            width: 40%;
+        }
+    }
+}
+
+.btn-abs {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+
+.center-container {
+    text-align: center;
+}
+
+.detail-container {
+    width: 100%
+}
+
