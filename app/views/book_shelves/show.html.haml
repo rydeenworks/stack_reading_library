@@ -1,0 +1,11 @@
+.center-container
+  .h2= @book_shelf.title
+  .h3= @book_shelf.note
+  %br
+  = link_to '本棚を編集', edit_book_shelf_path(@book_shelf), class:"btn-lg btn-primary"
+  %br
+  %br
+  = link_to '本棚を削除', book_shelves_path, method: :delete, class:"btn-lg btn-danger"
+  %br
+  %br
+  = link_to 'Back', book_shelves_path
